@@ -6,9 +6,17 @@ Source: owner-supplied `Component references(1).pdf`. Product references are **o
 
 | Component | Supplier reference | Published specification |
 | --- | --- | --- |
-| Encoder motor | [DFRobot FIT0450](https://www.gotronic.fr/art-kit-moteur-encodeur-fit0450-27583.htm) | 55 × 48 × 24 mm overall, 5 mm double-flat output shaft, 3–7.5 V motor supply, 2.8 A stall current |
+| Encoder motor | [DFRobot FIT0450](https://www.gotronic.fr/art-kit-moteur-encodeur-fit0450-27583.htm) | 55 × 48 × 24 mm overall; 5 mm double-flat shaft; 3–7.5 V motor supply; 6 V nominal; 160 rpm no-load at 6 V; 60 rpm no-load at 3 V; 170 mA no-load at 6 V; 140 mA at 3 V; 120:1 reduction; 0.2 kg·cm nominal torque; 0.8 kg·cm stall torque; 2.8 A stall current |
 | Four-channel motor shield | [DFRobot DRI0039](https://www.gotronic.fr/art-shield-moteurs-cc-4-x-1-2-a-dri0039-25557.htm) | 53 × 52 mm, 1.2 A continuous per channel, 3.2 A peak, motor supply 2.5–13.5 V |
 | Wheels | [Amazon listing B0DQCH5NH2](https://www.amazon.fr/gp/product/B0DQCH5NH2) | Wheel diameter, width, hub bore and offset not yet independently verified |
+
+## FIT0450 encoder and cable details
+
+- Encoder uses a 17 mm magnetic disc and two Hall-effect sensors.
+- Encoder supply: 4.5–7.5 V DC (6 V nominal).
+- The motor and encoder have separate cables. Allow cable exit, bend radius and strain relief in the holder.
+- The two encoder signals connect to two digital inputs on a suitable controller. Check logic-level compatibility before connecting to a Raspberry Pi or 3.3 V microcontroller.
+- **Torque distinction:** 0.8 kg·cm is stall torque, not nominal operating torque. The specified nominal torque is 0.2 kg·cm.
 
 ## Critical engineering checks
 
