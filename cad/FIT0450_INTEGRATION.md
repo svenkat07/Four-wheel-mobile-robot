@@ -29,3 +29,10 @@ The original FreeCAD chassis and exported four-holder STEP/STL assembly have bee
 6. Verify motor-driver current protection and 6 V regulated motor supply.
 
 **Status: mechanically modeled prototype, not fit-validated fabrication release.** Do not use overall 55 × 48 × 24 mm as a substitute for a mounting drawing.
+
+## Manufacturer CAD source located
+
+- [Official FIT0450 dimension drawing (PDF)](https://github.com/Arduinolibrary/DFRobot_Micro_DC_Geared_Motor_with_Encoder/blob/master/FIT0450%20Micro%20DC%20Motor%20with%20Encoder-SJ01.pdf)
+- [Official FIT0450 SolidWorks package](https://github.com/Arduinolibrary/DFRobot_Micro_DC_Geared_Motor_with_Encoder/blob/master/FIT0450%20Solidworks%20File.zip)
+
+These files are hosted in the repository linked by the DFRobot manufacturer. The available connector confirmed their presence, but could not retrieve the binary CAD for direct geometric fit checking. **The original provisional mount geometry has therefore not been relabeled as FIT0450-fit-verified.**
