@@ -1,32 +1,27 @@
-# Four-wheel chassis CAD review
+# Four-wheel robot chassis CAD
 
-The supplied motor-mount ZIP contains a chassis with provisional holes, four separate motor holders, a full STEP assembly, STL exports and a CadQuery generation script.
+The original FreeCAD file `3d prototype final project.FCStd` was inspected. Its `Body001` solid is **200 × 250 × 5 mm**. The original document has a Part Design Pad, rounded fillets, and pocket features.
 
-## Geometry checked from the STL exports
+A reproducible CadQuery script is available at [robot_mount_prototype.py](robot_mount_prototype.py). It generates:
 
-| Part | Bounding dimensions (mm) | Watertight |
-| --- | --- | --- |
-| Chassis | 200 × 250 × 5 | Yes |
-| Left-front holder | 50 × 50 × 24 | Yes |
-| Right-front holder | 50 × 50 × 24 | Yes |
-| Left-rear holder | 50 × 50 × 24 | Yes |
-| Right-rear holder | 50 × 50 × 24 | Yes |
+- A chassis with 16 nominal 3.4 mm M3 mounting holes
+- Four separate underside motor cradles (left/right, front/rear)
+- STEP and STL files for the chassis and holders
+- A combined STEP assembly
 
-The source script assumes a TT-style motor width of 23 mm, height of 18 mm, 0.8 mm total width clearance, and 3.4 mm M3 clearance holes. There are 16 provisional chassis mounting holes. These are **not verified against actual motor dimensions**.
+The generator was executed against the original FreeCAD archive. Exported parts are valid solids, and the motor-holder geometry does not intersect the chassis solid. The original FCStd source was preserved without modification.
 
-## Completion status
+## Regenerate
 
-- [x] Chassis STL and STEP generated
-- [x] Four individual motor holders exported as STL and STEP
-- [x] Combined STEP assembly available
-- [x] STL meshes checked for watertightness
-- [ ] Confirm motor shaft and wheel clearance
-- [ ] Confirm motor measurements, screw length, and nut access
-- [ ] Check physical motor fit and 3D-print strength
-- [ ] Confirm mounting-hole alignment and assembly orientation
+Place the original FreeCAD file in this folder named `Robot_Chassis.FCStd`, install CadQuery, then run:
 
-## Files still needed
+```sh
+python -m pip install cadquery
+python robot_mount_prototype.py
+```
 
-The original `Robot_Chassis.FCStd` file is **not present** in the uploaded ZIP. The script references it to regenerate the model. STEP files can be imported into FreeCAD, but do not preserve the original parametric feature history.
+## Verification still required
 
-The CAD package is ready for review, not yet approved for full-scale printing. The owner should provide the original FCStd model and actual motor dimensions before the final mechanical revision.
+The holder dimensions assume a **23 × 18 mm** motor cross-section and approximately **70 mm** length. These are provisional, not measurements. Verify wheel and shaft clearance, motor retention, screw lengths, access for nuts, electrical component mounts, print orientation and material strength before printing or assembly. First print one holder and test the actual motor fit.
+
+The complete CAD package, including the original FreeCAD source and exported STEP/STL models, has been prepared for download separately. The large binary CAD files are **not yet uploaded to this GitHub repository**.
